@@ -1,0 +1,19 @@
+body{
+    background-image: url("../images/background/diagmonds.png");
+}
+
+#characterSelect{
+    margin: auto;
+    margin-top: 50px;
+    width: 75vh;
+    min-height: 20vh;
+    background-color: rgb(34, 34, 34);
+}
+
+#characterSelect img:hover{
+    content: url("../images/subzero/standing.gif");
+}
+
+#characterSelect img:active{
+    border: solid blue 1px;
+}

@@ -11,28 +11,62 @@
     <!-- CSS Custome -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    
-    <title>Document</title>
+    <title>Mortal Kombat RPG!</title>
 </head>
 <body>
 
+    <!-- Header -->
+    <div class="headerContainer">
+    <header>Mortal Kombat RPG!</header>
+    </div>
+
     <!-- Character Select Section -->
     <section id="characterSelect">
-            <img src="assets/images/subzero/image.gif" alt="subzero standing" style="no-repeat;">
+        <div id="subzero" class="characterWrapper">
+                Sub-Zero<br>
+                <img src="assets/images/subzero/subzero.png" alt="subzero"><br>
+                <span id="subzeroHP"></span>
+        </div>
+        <div id="scorpion" class="characterWrapper">
+                Scorpion<br>
+                <img src="assets/images/scorpion/scorpion.png" alt="scorpion"><br>
+                <span id="scorpionHP"></span>
+        </div>
+        <div id="liukang" class="characterWrapper">
+                Liu Kang<br>
+                <img src="assets/images/liu kang/liu kang.png" alt="liu kang"><br>
+                <span id="liukangHP"></span>
+        </div>
+        <div id="raiden" class="characterWrapper">
+                Raiden<br>
+                <img src="assets/images/raiden/raiden.png" alt="raiden"><br>
+                <span id="raidenHP"></span>
+        </div>
     </section>
 
+    <!-- Your Character Section -->
+    <section id="yourCharacter">Your Character<br></section>
+
     <!-- Remaining Enemies Section -->
-    <section id="remainingEnemies"></section>
+    <section id="remainingEnemies">Enemies Available to Attack<br></section>
 
-    <!-- Fighting Section -->
-    <section id="fightingSection"></section>
+    <!-- Fight Section -->
+    <section id="fightSection">
+        Fight Section<br>
+        <button type="button" id="attackButton">Attack</button>
+    </section>
 
-    <!-- <img src="assets/images/subzero/standing.gif" alt="subzero standing">
-    <img src="assets/images/subzero/walking-forward.gif" alt="subzero standing">
-    <img src="assets/images/subzero/walking-backward.gif" alt="subzero standing">
-    <img src="assets/images/subzero/punching.gif" alt="subzero standing"> -->
+    <!-- Defender Section -->
+    <section id="defenderSection">Defender Section<br></section>
+
+    <!-- Results Section -->
+    <section id="results"></section>
+
+    <!-- jQuery CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- My JS -->
     <script src="./assets/javascript/game.js"></script>
+
 </body>
 </html>

@@ -1,19 +1,56 @@
 body{
-    background-image: url("../images/background/diagmonds.png");
+    background-image: url("../images/background/dragon.png");
+    background-size : 100vh;
+    color: orange;
+    padding-left: 10px;
+}
+
+.headerContainer{
+    text-align: center;
+}
+
+header{
+    font-size: 25px;
+    background-color: rgba(2,2,2,0.5);
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.characterWrapper{
+    background-color: rgb(32, 32, 32);
+    display: inline-block;
+    color: orange;
+    font-size: 15px;
+    text-align: center;
+}
+.characterWrapper img{
+    max-height: 20vh;
+}
+.characterWrapper:active{
+    border: solid orange 3px;
 }
 
 #characterSelect{
+    text-align: center;
     margin: auto;
-    margin-top: 50px;
-    width: 75vh;
+    margin-top: 10px;
+    max-width: 100vh;
     min-height: 20vh;
     background-color: rgb(34, 34, 34);
+    border-radius: 10px;
 }
 
-#characterSelect img:hover{
+#characterSelect img{
+    max-height: 20vh;
+}
+
+#yourCharacter, #remainingEnemies, #fightSection, #defenderSection{
+    font-size:  15px;
+    color: white;
+}
+
+/* #characterSelect img:hover{
     content: url("../images/subzero/standing.gif");
-}
+} */
 
-#characterSelect img:active{
-    border: solid blue 1px;
-}

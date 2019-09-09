@@ -1,27 +1,27 @@
 $(document).ready(function() {
 
     var subzero = {
-        name: "subzero",
-        hp: 100,
-        ap: 10
+        name: "Sub-Zero",
+        hp: 120,
+        ap: 18,
     }
 
     var scorpion = {
-        name: "scorpion",
-        hp: 100,
-        ap: 10
+        name: "Scorpion",
+        hp: 180,
+        ap: 15
     }
 
     var liukang = {
-        name: "liukang",
+        name: "Liu Kang",
         hp: 100,
-        ap: 10
+        ap: 25
     }
 
     var raiden = {
-        name: "raiden",
-        hp: 100,
-        ap: 10
+        name: "Raiden",
+        hp: 150,
+        ap: 20
     }
 
 
@@ -30,6 +30,10 @@ function health(){
     $("#scorpionHP").text(scorpion.hp);
     $("#liukangHP").text(liukang.hp);
     $("#raidenHP").text(raiden.hp);
+}
+
+function results(x, y){
+    $("#results").text("You attacked " + x + " for " + y + " damage.");
 }
 
 function toObject(x){
@@ -54,8 +58,7 @@ function characterSelect(){
             $(this).appendTo("#yourCharacter");
             $(".characterWrapper").not(this).appendTo("#remainingEnemies");
             
-            var x = this;
-            defender(x);    
+            defender(this);    
             click++;
         }
     });
@@ -70,51 +73,48 @@ function defender(x){
             console.log(enemy);
             $(this).appendTo("#defenderSection");
             
-            attack(character, enemy);
+            attack(x, this);
 
-
-           
             click++;
        }
     });
 }
 
-function attack(character, enemy){
+function attack(x, y){
+
+    var character = toObject(x.id);
+    var enemy = toObject(y.id);
+    var apTemp = character.ap;
+
     $("#attackButton").on("click", function(event){
-        enemy.hp -= character.ap;
-        health();
-        if(enemy.hp <= 0){
-            $("#defenderSection").html("");
-            defender(character);
+
+        
+
+        if(enemy.hp > 0){
+            enemy.hp -= apTemp;
+            apTemp += character.ap;
+            console.log("ap =" + apTemp);
+            if(enemy.hp > 0)
+            character.hp -= enemy.ap;
         }
+        
+        health();
+        
+        if(enemy.hp <= 0){
+            $("#defenderSection").html("Defender Section<br>");
+            enemy = "";
+            character.ap = apTemp;
+            defender(x);
+        }
+        
+        results(enemy.name, apTemp);
+        
     });
 
 }
 
 health();
 characterSelect();
-
-// var click1 = 0;
-// var click2 = 0;
-// $(".characterWrapper").on("click", function(event){
-//     if(click1 == 0){
-//     $("#characterSelect").css({"display": "none"});
-//      $(this).appendTo("#yourCharacter");
-//      $(".characterWrapper").not(this).appendTo("#remainingEnemies");
-//      var x = this;
-
-//      $(".characterWrapper").on("click", function(event){
-//          if(click2 == 0 && this !== x){
-//             $(this).appendTo("#defenderSection");
-//             click2++;
-//         }
-//      });
-//     click1++;
-//     }
-// });
-
-
-
 
 
 });
